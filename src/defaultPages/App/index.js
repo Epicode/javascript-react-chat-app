@@ -18,8 +18,8 @@ import {
     CometChatConversationList,
     CometChatConversationListWithMessages,
     CometChatUserList,
-    CometChatUserListWithMessages,
-    CometChatGroupList,
+    CometChatUserListWithMessages, 
+    CometChatGroupList, 
     CometChatGroupListWithMessages
 } from '../../cometchat-pro-react-ui-kit/CometChatWorkspace/src';
 
