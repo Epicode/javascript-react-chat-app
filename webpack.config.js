@@ -33,15 +33,15 @@ module.exports = {
             use: ['style-loader', 'css-loader'],
          },
          {
-            test: /\.(png|j?g|svg|gif|wav)?$/,
+            test: /\.(png|j?g|svg|gif|wav|ico)?$/,
             use: 'file-loader'
          }
 ]
    },
    plugins: [
-      new HtmlWebPackPlugin({
-         template: path.resolve( __dirname, 'public/index.html' ),
-         filename: 'index.html'
-      })
+      // new HtmlWebPackPlugin({
+      //    template: path.resolve( __dirname, 'public/index.html' ),
+      //    filename: 'index.html'
+      // })
    ]
 };
