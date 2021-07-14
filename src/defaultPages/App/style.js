@@ -1,7 +1,8 @@
 export const wrapperStyle = () => {
 
     return {
-        width: "100vw",
-        height: "100vh",
+        width: "auto",
+        height: "80vh",
+        minHeight: "320px"
     }
 }

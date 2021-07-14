@@ -175,13 +175,13 @@ export class CometChatNavBar extends React.Component {
 							<div css={itemLinkTextStyle(groupsTabActive, this.context)} className="item__label">{Translator.translate("GROUPS", this.props.lang)}</div>
 						</div>
 					);
-				case "SIDEBAR_MOREINFO":
-					return (
-						<div key={tab} css={itemStyle(this.props)} className="navbar__item" onClick={() => this.tabChanged("SIDEBAR_MOREINFO")}>
-							<div css={itemLinkStyle(moreGreyIcon, moreTabActive, this.context)} className="item__link item__link__info" title={Translator.translate("MORE", this.props.lang)}></div>
-							<div css={itemLinkTextStyle(moreTabActive, this.context)} className="item__label">{Translator.translate("MORE", this.props.lang)}</div>
-						</div>
-					);
+				// case "SIDEBAR_MOREINFO":
+				// 	return (
+				// 		<div key={tab} css={itemStyle(this.props)} className="navbar__item" onClick={() => this.tabChanged("SIDEBAR_MOREINFO")}>
+				// 			<div css={itemLinkStyle(moreGreyIcon, moreTabActive, this.context)} className="item__link item__link__info" title={Translator.translate("MORE", this.props.lang)}></div>
+				// 			<div css={itemLinkTextStyle(moreTabActive, this.context)} className="item__label">{Translator.translate("MORE", this.props.lang)}</div>
+				// 		</div>
+				// 	);
 				default:
 					return null;
 			}

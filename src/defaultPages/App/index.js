@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { createBrowserHistory } from 'history';
+import { createMemoryHistory  } from 'history';
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
@@ -18,8 +18,8 @@ import {
     CometChatConversationList,
     CometChatConversationListWithMessages,
     CometChatUserList,
-    CometChatUserListWithMessages, 
-    CometChatGroupList, 
+    CometChatUserListWithMessages,
+    CometChatGroupList,
     CometChatGroupListWithMessages
 } from '../../cometchat-pro-react-ui-kit/CometChatWorkspace/src';
 
@@ -27,7 +27,7 @@ import {
     wrapperStyle
 } from "./style";
 
-const history = createBrowserHistory();
+const history = createMemoryHistory();
 
 class App extends React.Component {
     state = {
@@ -44,6 +44,7 @@ class App extends React.Component {
             <div css={wrapperStyle()}>
                 <Router history={history}>
                     <Switch>
+                        <PrivateRoute exact path="/" component={CometChatUI} />
                         <PrivateRoute path="/embedded-app" component={CometChatUI} />
                         <PrivateRoute path="/conversations" component={CometChatConversationListWithMessages} />
                         <PrivateRoute path="/groups" component={CometChatGroupListWithMessages} />
@@ -51,7 +52,6 @@ class App extends React.Component {
                         <PrivateRoute path="/conversation-list" component={CometChatConversationList} />
                         <PrivateRoute path="/group-list" component={CometChatGroupList} />
                         <PrivateRoute path="/user-list" component={CometChatUserList} />
-                        <PrivateRoute exact path="/" component={HomePage} />
                         <Route path="/login" component={KitchenSinkApp} />
                     </Switch>
                 </Router>

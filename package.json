@@ -3,19 +3,13 @@
   "version": "2.3.6-1",
   "private": true,
   "dependencies": {
-    "@babel/cli": "^7.14.5",
     "@cometchat-pro/chat": "2.3.6",
     "@emotion/core": "^10.0.35",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-react-app": "^10.0.0",
-    "browserify": "^17.0.0",
-    "css-loader": "^5.2.6",
     "dateformat": "^4.0.0",
     "emoji-mart": "^3.0.0",
-    "file-loader": "^6.2.0",
     "history": "^4.6.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -25,18 +19,16 @@
     "react-scripts": "^4.0.3",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "sassify": "^4.0.1",
-    "style-loader": "^3.0.0",
     "twemoji": "^13.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
-    "webpack-dev-server": "webpack-dev-server",
-    "dev": "webpack serve --mode=development",
-    "prod": "webpack --mode=production",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postinstall": "node ./postinstall.js"
+    "wptest": "echo \"Error: no test specified\" && exit 1",
+    "wpstart": "webpack serve --open --hot --mode development",
+    "wpbuild": "webpack --mode production"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -53,36 +45,31 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "http://.",
+  "homepage": ".",
   "devDependencies": {
     "@babel/core": "^7.14.6",
-    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.14.5",
     "@babel/preset-env": "^7.14.7",
     "@babel/preset-react": "^7.14.5",
-    "babel-loader": "^8.1.0",
-    "babelify": "^10.0.0",
+    "autoprefixer": "^10.3.1",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "css-loader": "^5.2.6",
+    "extract-text-webpack-plugin": "^3.0.2",
     "extract-zip": "^2.0.1",
+    "file-loader": "^6.2.0",
     "fs-extra": "^9.0.1",
     "html-webpack-plugin": "^5.3.2",
-    "interpolate-html-plugin": "^4.0.0",
     "node-sass": "^4.12.1",
+    "postcss": "^8.3.5",
+    "postcss-loader": "^6.1.1",
     "rimraf": "^3.0.2",
     "sass": "^1.35.2",
     "sass-loader": "^12.1.0",
+    "style-loader": "^3.1.0",
+    "url-loader": "^4.1.1",
     "webpack": "^5.44.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"
-  },
-  "description": "<div style=\"width:100%\">\r     <div style=\"width:50%;\">\r         <div align=\"center\">\r         <img align=\"center\" width=\"180\" height=\"180\" alt=\"CometChat\" src=\"./Screenshots/logo.png\">    \r         </div>    \r     </div>    \r </div>",
-  "main": "postinstall.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Epicode/javascript-react-chat-app.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Epicode/javascript-react-chat-app/issues"
   }
 }

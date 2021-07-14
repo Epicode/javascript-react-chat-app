@@ -8,7 +8,6 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { CometChatAvatar } from '../../cometchat-pro-react-ui-kit/CometChatWorkspace/src';
-import { COMETCHAT_CONSTANTS } from '../../consts';
 
 import {
   wrapperStyle,
@@ -36,13 +35,13 @@ class KitchenSinkApp extends React.PureComponent {
   }
 
   login = (uid) => {
-    
+    console.log(uid);
     if(!uid) {
       uid = this.myRef.current.value;
     }
 
     this.uid = uid;
-    this.props.onLogin(this.uid, COMETCHAT_CONSTANTS.AUTH_KEY);
+    this.props.onLogin(this.uid, AUTH_KEY);
   }
   
   render() {

@@ -3,6 +3,7 @@ import * as enums from "../../util/enums.js";
 import translationAR from "./locales/ar/translation.json";
 import translationDE from "./locales/de/translation.json";
 import translationEN from "./locales/en/translation.json";
+import translationPL from "./locales/pl/translation.json";
 import translationES from "./locales/es/translation.json";
 import translationFR from "./locales/fr/translation.json";
 import translationHI from "./locales/hi/translation.json";
@@ -18,7 +19,8 @@ import translationLT from "./locales/lt/translation.json";
 const translations = {
     "ar": translationAR,
     "de": translationDE,
-    "en": translationEN,
+    "en-US": translationEN,
+    "pl": translationPL,
     "es": translationES,
     "fr": translationFR,
     "hi": translationHI,
@@ -40,7 +42,7 @@ class Translator {
 
     static key = enums.CONSTANTS["LOCALE"];
     static rtlLanguages = ["ar"];
-    static defaultLanguage = "en";
+    static defaultLanguage = "pl";
 
     static getLanguage = () => {
 
@@ -59,6 +61,7 @@ class Translator {
 
         //get the language from localstorage
         const savedLanguage = this.getLanguage();
+        console.log(savedLanguage);
 
         //get the language set in the browser
         const browserLanguageCode = Translator.getBrowserLanguage().toLowerCase();
@@ -73,19 +76,19 @@ class Translator {
 
         //if there is language set in localstorage and it is different from browser language, update local storage and return the language code
         if (savedLanguage) {
+            return savedLanguage;
+            // if (savedLanguage !== browserLanguage) {
 
-            if (savedLanguage !== browserLanguage) {
-
-                this.setLanguage(browserLanguage);
+            //     this.setLanguage(browserLanguage);
                 
-                //if the translations are not available, default to en
-                return (translations.hasOwnProperty(browserLanguage)) ? browserLanguage : this.defaultLanguage;
+            //     //if the translations are not available, default to en
+            //     return (translations.hasOwnProperty(browserLanguage)) ? browserLanguage : this.defaultLanguage;
                 
-            } else {
+            // } else {
 
-                //if the translations are not available, default to en
-                return (translations.hasOwnProperty(browserLanguage)) ? browserLanguage : this.defaultLanguage;
-            }
+            //     //if the translations are not available, default to en
+            //     return (translations.hasOwnProperty(browserLanguage)) ? browserLanguage : this.defaultLanguage;
+            // }
 
         } else {
 
