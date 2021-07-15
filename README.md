@@ -1,3 +1,23 @@
+# Emplo Chat Module
+## Installation
+```javascript
+  yarn install
+  yarn run wpbuild
+```
+
+It creates `bundle.js` in `dist` folder.
+
+If you don't have `yarn` installed: 
+```javascript
+  npm install --global yarn
+```
+
+## Translation
+
+Files used by localizer are in `src\resources\localization\locales\`
+
+# CometChat Readme below
+
 <div style="width:100%">
     <div style="width:50%;">
         <div align="center">
