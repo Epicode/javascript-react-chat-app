@@ -1,18 +1,17 @@
 $base_font_family: "Inter", sans-serif;
 
-
-* {
+#cometchat  * {
   box-sizing: border-box;
 }
 
-html {
+#cometchat  html {
   text-size-adjust:100%;
   font-size:10px;
   height: 100%;
   width: 100%;
 }
 
-body{
+#cometchat body {
   margin:0;
   padding:0;
   font-family: $base_font_family;
@@ -25,50 +24,51 @@ body{
   width: 100%;
 }
 
-a { 
+#cometchat  a { 
   background:0 0;
   text-decoration:none;
   background-color:transparent;
   color:inherit;
 }
 
-a,
-a:visited,
-a:active,
-a:hover {
+#cometchat  a,
+#cometchat  a:visited,
+#cometchat  a:active,
+#cometchat  a:hover {
   color: white;
   text-decoration: none;
 }
 
-img {
+ img {
   border:0;
   border-style:none;
   max-width:100%;
   display:inherit;
 }
 
-button,
-input,
-select,
-textarea {
+ button,
+ input,
+ select,
+ textarea {
   font-family:inherit;
   font-size:100%;
   margin:0;
   font:inherit;
 }
 
-button,input {
+ button,
+ input {
   line-height:normal;
   overflow:visible;
 }
 
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"],
-html [type="button"],
-[type="reset"],
-[type="submit"] {
+ button,
+ html input[type="button"],
+ input[type="reset"],
+ input[type="submit"],
+ html [type="button"],
+ [type="reset"],
+ [type="submit"] {
   -webkit-appearance:button;
   cursor:pointer;
   outline:0;
@@ -76,12 +76,17 @@ html [type="button"],
   background-color:transparent;
 }
 
-h1,h2,h3,h4,h5,h6 {
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
   font-family: $base_font_family;
   font-stretch:normal;
 }
 
-h4 {
+ h4 {
   font-size: 2.2rem;
   line-height:27px;
 }

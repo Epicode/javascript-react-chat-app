@@ -12,9 +12,19 @@ If you don't have `yarn` installed:
   npm install --global yarn
 ```
 
+## Implementation
+To run this app it is necessary to declare variables in script, before bundle.js is included.
+```
+var languageCultureInfo = ...;
+var appID = ...;
+var region = ...;
+var AUTH_KEY = ...;
+var uid = ...;
+```
+
 ## Translation
 
-Files used by localizer are in `src\resources\localization\locales\`
+Files used by localizer are in `src\cometchat-pro-react-ui-kit\CometChatWorkspace\src\resources\localization\locales\pl`
 
 # CometChat Readme below
 

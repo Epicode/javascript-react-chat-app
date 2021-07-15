@@ -145,8 +145,9 @@ class CometChatMessageHeader extends React.Component {
 	};
 
 	setStatusForGroup = () => {
-		let membersText = Translator.translate("MEMBERS", this.props.lang);
-		const status = `${this.context.item.membersCount} ${membersText}`;
+		const membersCount = this.context.item.membersCount;
+		const membersText = membersCount == 1 ?  Translator.translate("MEMBERS_SINGULAR", this.props.lang) :  Translator.translate("MEMBERS_PLURAL", this.props.lang);;
+		const status = `${membersCount} ${membersText}`;
 		this.setState({status: status});
 	};
 

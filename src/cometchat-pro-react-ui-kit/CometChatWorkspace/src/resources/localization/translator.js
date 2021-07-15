@@ -50,7 +50,6 @@ class Translator {
     }
 
     static setLanguage = (language) => {
-
         const item = this.key;
         localStorage.setItem(item, language);
     }
@@ -58,11 +57,13 @@ class Translator {
     static getBrowserLanguage = () => ((navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage);
 
     static getDefaultLanguage = () => {
-
+        if(languageCultureInfo)
+        {
+            return languageCultureInfo;
+        }
         //get the language from localstorage
         const savedLanguage = this.getLanguage();
-        console.log(savedLanguage);
-
+        
         //get the language set in the browser
         const browserLanguageCode = Translator.getBrowserLanguage().toLowerCase();
         let browserLanguage = browserLanguageCode;
@@ -91,10 +92,9 @@ class Translator {
             // }
 
         } else {
-
             this.setLanguage(browserLanguage);
-
             //if the translations are not available, default to en
+            
             return (translations.hasOwnProperty(browserLanguage)) ? browserLanguage : this.defaultLanguage;
         }
     }
@@ -104,7 +104,10 @@ class Translator {
     }
 
     static translate(str, language) {
-
+        if(!language)
+        {
+            language = this.getDefaultLanguage();
+        }
         if (translations.hasOwnProperty(language)) {
 
             const languageDb = translations[language];
@@ -115,7 +118,6 @@ class Translator {
             return str;
 
         } else {
-
             const languageDb = translations[this.defaultLanguage];
             if (languageDb.hasOwnProperty(str)) {
                 return languageDb[str];

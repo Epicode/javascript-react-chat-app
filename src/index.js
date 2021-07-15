@@ -22,35 +22,38 @@ const store = createStore(reducer, compose(
 ));
 
 
-  var appSetting = new CometChat.AppSettingsBuilder().subscribePresenceForAllUsers().setRegion(region).build();
-  CometChat.init(appID, appSetting).then(async () => {
-      if(CometChat.setSource) {
-        CometChat.setSource("ui-kit", "web", "reactjs");
-      }
-    CometChat.login(uid, AUTH_KEY).then(
-      user => {
-        console.log("Login Successful:", { user });    
-      },
-      error => {
-        console.log("Login failed with exception:", { error });    
-      }
-    );
-    Translator.setLanguage(languageCultureInfo);
-    console.log(languageCultureInfo);
-        ReactDOM.render(
-          <Provider store={store}>
-            <BrowserRouter>
-              <App />
-            </BrowserRouter>
-          </Provider>
-        , document.getElementById('root'));
-     
+var appSetting = new CometChat.AppSettingsBuilder().subscribePresenceForAllUsers().setRegion(region).build();
+CometChat.init(appID, appSetting).then(async () => {
+
+  if(CometChat.setSource) {
+    CometChat.setSource("ui-kit", "web", "reactjs");
+  }
+  
+  Translator.setLanguage(languageCultureInfo);
+
+  CometChat.login(uid, AUTH_KEY).then(
+    user => {
+      console.log("Login Successful:", { user });    
     },
     error => {
-      console.log("Initialization failed with error:", error);
-      // Check the reason for error and take appropriate action.
+      console.log("Login failed with exception:", { error });    
     }
   );
+
+  ReactDOM.render(
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  , document.getElementById('cometchat'));
+    
+  },
+  error => {
+    console.log("Initialization failed with error:", error);
+    // Check the reason for error and take appropriate action.
+  }
+);
 
   
 
@@ -58,4 +61,4 @@ const store = createStore(reducer, compose(
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+serviceWorker.register();

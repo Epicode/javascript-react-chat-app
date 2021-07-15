@@ -35,7 +35,6 @@ class KitchenSinkApp extends React.PureComponent {
   }
 
   login = (uid) => {
-    console.log(uid);
     if(!uid) {
       uid = this.myRef.current.value;
     }
